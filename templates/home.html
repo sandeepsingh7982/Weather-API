@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<div>
+    <img src="{{url_for('static',filename='home.jpg')}}" alt="Snow" style=" position: relative; width:1519px; height: 700px;">
+    <div class="top-left"><p style="font-size: 80px;">WELCOME TO WEATHER REPORT</p></div>
+    <div class="centered">
+        <form class="form-inline my-2 my-lg-0" action="{{url_for('getdata')}}" method="POST">
+            <input class="form-control mr-sm-2" type="search" placeholder="CITY NAME" aria-label="Search" name="city_name" required>
+            <button class="btn btn-info my-2 my-sm-0" type="submit">SUBMIT</button>
+        </form>
+    </div>
+  </div>
+
+    
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{% for i in data %}
+    <div class="container-fluid mt-4">
+        <div class="jumbotron bg-b" >
+            <div class="row">
+                <div class="col-md-2">
+                    <h3>DATE</h3>
+                    <h5>{{i['dt_txt']}}</h5>
+                </div>
+                <div class="col-md-2">
+                    <h3>TEMPERATURE</h3>
+                    <h5>{{i['main']['temp']}}</h5>
+                </div>
+                <div class="col-md-2">
+                    <h3>PRESSURE</h3>
+                    <h5>{{i['main']['pressure']}}</h5>
+                </div>
+                <div class="col-md-2">
+                    <h3>HUMIDITY</h3>
+                    <h5>{{i['main']['humidity']}}</h5>
+                </div>
+                <div class="col-md-2">
+                    <h3>WIND SPEED</h3>
+                    <h5>{{i['wind']['speed']}}<span>m/s</span></h5>
+                </div>
+                <div class="col-md-2">
+                    <img src="http://openweathermap.org/img/w/{{i['weather'][0]['icon']}}.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

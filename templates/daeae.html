@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{% for i in data %}
+    <div class="jumbotron bg-b" style="background-size: 100% 100%; height: 220px; margin: 10px 30px 10px 30px; border-radius: 10px;">
+        <h3>DATE<span style="margin-left: 200px;">TEMPERATURE</span><span style="margin-left: 50px;">PRESSURE</span><span style="margin-left: 50px;">HUMIDITY</span><span style="margin-left: 50px;">WIND SPEED</span>
+        </h3>
+        <h5><span>{{i['dt_txt']}}</span><span style="margin-left: 150px;">{{i['main']['temp']}}</span><span>&#8451;</span>
+        <span style="margin-left: 125px;">{{i['main']['pressure']}}</span><span>&#13268;</span><span style="margin-left: 125px;">{{i['main']['humidity']}}</span><span>&#37;</span><span style="margin-left: 165px;">{{i['wind']['speed']}}</span><span>m/s</span>
+        <img class="image" src="http://openweathermap.org/img/w/{{i['weather'][0]['icon']}}.png" alt="">
+        </h5>
+    </div>
+{% endfor %}
+{% endblock %}
